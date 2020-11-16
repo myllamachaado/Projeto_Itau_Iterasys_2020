@@ -14,11 +14,11 @@ Utilizando o site Microsoft To Do (https://todo.microsoft.com). Você deve criar
 8) Valide se a lista Meus Livros existe, seu nome, itens e se os 3 itens (livros) estão como importantes e os outros 2 estão como concluídos
 
 **Testes automatizados desenvolvido utilizando**
-▪ Eclipse versão 2020-09 (4.17.0) 
-▪ JDK 14
-▪ Selenium versão 2020-09 (4.17.0)
-▪ Cucumber versão 6.1.2
-▪JUnit versão 5.6.2 
+▪ Eclipse versão 2020-09 (4.17.0) <br />
+▪ JDK 14 <br />
+▪ Selenium versão 2020-09 (4.17.0) <br />
+▪ Cucumber versão 6.1.2 <br />
+▪JUnit versão 5.6.2  <br />
 
 
 
