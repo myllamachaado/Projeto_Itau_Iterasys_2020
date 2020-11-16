@@ -1,0 +1,9 @@
+package tasks;
+
+import base.BaseTests;
+
+public class TasksPageTests extends BaseTests {
+
+	
+	
+}

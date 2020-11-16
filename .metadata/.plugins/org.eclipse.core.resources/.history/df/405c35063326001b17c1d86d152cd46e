@@ -1,0 +1,82 @@
+
+package homepage;
+
+import org.junit.jupiter.api.Test;
+
+import base.BaseTests;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.HomePage;
+import pages.LoginPage;
+
+public class HomePageTests extends BaseTests{
+//	protected HomePage homePage;
+//	protected LoginPage loginPage;
+
+//	@Test
+//	public void realizarLogin() throws Exception {
+//		Thread.sleep(2000);
+//		loginPage = homePage.clicarBotaoSignIn();
+//		System.out.println("Aqui 2");
+//		Thread.sleep(2000);
+//		loginPage.inserirEmail("myllamachaado@gmail.com");
+//		Thread.sleep(2000);
+//		loginPage.clicarBotaoProximo();
+//		Thread.sleep(2000);
+//		loginPage.inserirSenha("MYLL@cr77");
+//		Thread.sleep(2000);
+//		loginPage.clicarBotaoProximo();
+//		Thread.sleep(2000);
+//		loginPage.clicarBotaoProximo();
+//		Thread.sleep(10000);
+//		loginPage = homePage.validaUsuarioLogado();
+//	}
+//	
+//	@Test
+//	public void validaLoginUsuario() throws Exception {
+//		realizarLogin();
+//	}
+	
+	//-----------------------------------------------------------------------------------------------------------------
+	
+	@Given("Que o ator ja esta com o navegador aberto na pagina {string}")
+	public void que_o_ator_ja_esta_com_o_navegador_aberto_na_pagina(String url) throws Exception {
+		iniciaPaginaInicial();
+		Thread.sleep(2000);
+		loginPage = homePage.validaHomePage();
+	}
+
+	@When("O ator clica no icone de login no canto superior")
+	public void o_ator_clica_no_icone_de_login_no_canto_superior() throws Exception {
+		Thread.sleep(2000);
+		loginPage = homePage.clicarBotaoSignIn();
+	}
+
+	@And("O ator insere o email {string} e clica no botao proximo")
+	public void o_ator_insere_o_email_e_clica_no_botao_proximo(String email) throws Exception {
+		Thread.sleep(2000);
+		loginPage.inserirEmail(email);
+		loginPage.clicarBotaoProximo();
+	}
+
+	@And("O ator insere a senha {string} e clica no botao proximo")
+	public void o_ator_insere_a_senha_e_clica_no_botao_proximo(String senha) throws Exception {
+		Thread.sleep(2000);
+		loginPage.inserirSenha("MYLL@cr77");
+		loginPage.clicarBotaoProximo();
+	}
+
+	@And("O ator confirma que quer continuar conectado")
+	public void o_ator_confirma_que_quer_continuar_conectado() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("A pagina de tarefas e exibida para o ator")
+	public void a_pagina_de_tarefas_e_exibida_para_o_ator() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

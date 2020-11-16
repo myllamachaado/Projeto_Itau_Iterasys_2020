@@ -1,0 +1,39 @@
+package base;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import pages.HomePage;
+import pages.LoginPage;
+import pages.TasksPage;
+
+public class BaseTests {
+	public static WebDriver driver;
+	
+	protected HomePage homePage;
+	protected LoginPage loginPage;
+	protected TasksPage tasksPage;
+	
+	static String webSitePath = "https://todo.microsoft.com";
+	
+	@BeforeAll
+	public static void iniciar() {
+		System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver\\86\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	@BeforeEach
+	public void iniciaPaginaInicial() {
+		driver.get(webSitePath);
+		homePage = new HomePage(driver);
+	}
+	
+	@AfterAll
+	public static void finalizar() {
+		driver.quit();
+		
+	}
+}

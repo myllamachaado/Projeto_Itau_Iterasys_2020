@@ -1,0 +1,41 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class HomePage {
+	// Driver
+	private WebDriver driver;
+	//Componentes da Homepage relacionados a Login
+	private By iconeSignIn = By.cssSelector("div[id*=\"mectrl_headerPicture\"]");
+	
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public LoginPage clicarBotaoSignIn() {
+		driver.findElement(iconeSignIn).click();
+		return new LoginPage(driver);
+	}
+	
+	public LoginPage validaHomePage() {
+		String pagina = driver.getCurrentUrl();
+		if (pagina.equals("https://to-do.live.com/tasks/")) {
+			System.out.println("O usuário está na página inicial corretamente");
+		}
+		else {
+			System.out.println("O usuário não está na página inicial");
+		}
+		return new LoginPage(driver);
+	}
+
+	
+	public LoginPage validaUsuarioLogado() {
+		if (driver.getCurrentUrl().contains("https://to-do.live.com/tasks/")) {
+			System.out.println("O usuário está logado corretamente");
+		}
+		return new LoginPage(driver);
+	}
+
+	
+}

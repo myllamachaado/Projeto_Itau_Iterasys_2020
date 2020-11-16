@@ -1,0 +1,22 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class HomePage {
+	// Driver
+	private WebDriver driver;
+	
+	//Componentes da Homepage relacionados a Login
+	private By iconeSignIn = By.cssSelector("div[id*=\"mectrl_headerPicture\"]");
+	
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public LoginPage clicarBotaoSignIn() {
+		driver.findElement(iconeSignIn).click();
+		return new LoginPage(driver);
+	}
+	
+}

@@ -1,0 +1,9 @@
+package Lista;
+
+import base.BaseTests;
+
+public class ListaPageTests extends BaseTests{
+
+	
+	
+}

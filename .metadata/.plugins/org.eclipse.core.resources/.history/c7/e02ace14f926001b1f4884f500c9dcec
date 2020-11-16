@@ -1,0 +1,11 @@
+@tag
+Feature: HomePage
+
+	@tag1
+	Scenario: Cenario de login com sucesso
+		Given que estou com o navegador aberto na home page do sistema
+		 When clico no icone de login no canto superior
+		  And insiro o email "myllamachaado@gmail.com" e clico no botao proximo
+		  And insiro a senha "MYLL@cr77" e clico no botao proximo
+		  And confirmo que quero continuar conectado
+		 Then a pagina de tarefas e exibida

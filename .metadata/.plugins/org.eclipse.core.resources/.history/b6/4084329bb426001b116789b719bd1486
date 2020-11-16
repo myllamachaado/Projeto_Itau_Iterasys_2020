@@ -1,0 +1,37 @@
+package steps;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import pages.TasksPage;
+
+public class ListaSteps {
+	
+	private static WebDriver driver;
+	TasksPage tasksPage = new TasksPage(driver);
+	
+	@And("O ator insere o nome Lista como nome da lista")
+	public void o_ator_insere_o_nome_lista_como_nome_da_lista() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@And("O ator aperta o botao ENTER")
+	public void o_ator_aperta_o_botao_enter() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("A nova lista e criada na barra lateral")
+	public void a_nova_lista_e_criada_na_barra_lateral() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@And("O ator insere o nome Meus Livros como nome da lista")
+	public void o_ator_insere_o_nome_meus_livros_como_nome_da_lista() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

@@ -1,0 +1,32 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage {
+
+	// Driver
+	private WebDriver driver;
+	
+	//Componentes da Homepage relacionados a Login
+	private By email = By.className("form-control ltr_override input ext-input text-box ext-text-box");
+	private By senha = By.className("form-control input ext-input text-box ext-text-box");
+	private By botaoProximo = By.className("button ext-button primary ext-primary");
+	
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void inserirEmail(String texto) {
+		driver.findElement(email).sendKeys(texto);
+	}
+	
+	public void inserirSenha(String texto) {
+		driver.findElement(senha).sendKeys(texto);
+	}
+	
+	public void clicarBotaoProximo() {
+		driver.findElement(botaoProximo).click();
+	}
+	
+}

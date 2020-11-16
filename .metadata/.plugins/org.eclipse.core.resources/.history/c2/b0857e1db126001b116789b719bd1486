@@ -1,0 +1,26 @@
+package steps;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class ListaSteps {
+	@And("O ator digita o nome da lista em seu respectivo input")
+	public void o_ator_digita_o_nome_da_lista_em_seu_respectivo_input() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@And("O ator aperta o botao ENTER")
+	public void o_ator_aperta_o_botao_enter() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("A nova lista e criada na barra lateral")
+	public void a_nova_lista_e_criada_na_barra_lateral() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

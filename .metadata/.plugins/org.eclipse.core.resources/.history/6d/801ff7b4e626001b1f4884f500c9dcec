@@ -1,0 +1,24 @@
+@tag
+Feature: Livros
+
+	@tag1
+	Scenario Outline: Cenario de login com sucesso 
+		Given Que o ator ja esta com o navegador aberto na pagina inicial
+		 When O ator clica no icone de login no canto superior
+		  And O ator insere o email "myllamachaado@gmail.com" e clica no botao proximo
+		  And O ator insere a senha "MYLL@cr77" e clica no botao proximo
+		  And O ator confirma que quer continuar conectado
+		  And A pagina de tarefas e exibida para o ator
+		  And O ator seleciona a lista "<nome_lista>"
+		 And O ator insere o nome "<nome_livro>" na tarefa
+		 And O ator aperta o botao ADICIONAR
+		Then O livro "<nome_livro>" aparece na lista "<nome_lista>"
+
+		Examples: 
+      | nome_lista  | nome_livro | favorito
+      | Lista 			| "A Arte da Guerra"
+      | Lista 			| "A Cauda Longa"
+      | Lista 			| 
+      | Meus Livros |
+      | Meus Livros |
+      | Meus Livros |

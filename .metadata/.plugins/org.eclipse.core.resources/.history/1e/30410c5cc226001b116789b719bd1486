@@ -1,0 +1,25 @@
+package Lista;
+
+import org.junit.jupiter.api.Test;
+
+import base.BaseTests;
+import homepage.HomePageTests;
+import pages.TasksPage;
+
+public class ListaPageTests extends BaseTests{
+
+	@Test
+	public void insereNovaLista() throws Exception {
+		HomePageTests homePageTests = new HomePageTests();
+		
+		homePageTests.realizarLogin();
+		TasksPage tasksPage = new TasksPage(driver);
+		tasksPage.insereNomeLista("Lista");
+		tasksPage.apertarENTER();
+	}
+	
+	@Test
+	public void insereNovoItemLista() throws Exception {
+		
+	}
+}

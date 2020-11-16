@@ -1,0 +1,12 @@
+package Lista;
+
+import org.junit.jupiter.api.Test;
+
+import base.BaseTests;
+import pages.TasksPage;
+
+public class ListaPageTests extends BaseTests{
+
+	
+	
+}

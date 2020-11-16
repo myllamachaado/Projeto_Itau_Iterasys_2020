@@ -1,0 +1,65 @@
+package steps;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import base.BaseTests;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.HomePage;
+import pages.LoginPage;
+
+public class HomePageSteps{  
+	
+	private static WebDriver driver;
+	LoginPage loginPage = new LoginPage(driver);
+	
+	
+	@Given("Que o ator ja esta com o navegador aberto na pagina inicial")
+	public void que_o_ator_ja_esta_com_o_navegador_aberto_na_pagina_inicial()throws Exception {
+		HomePage homePage = new HomePage(driver);
+		homePage.validaHomePage();
+	}
+
+	@When("O ator clica no icone de login no canto superior")
+	public void o_ator_clica_no_icone_de_login_no_canto_superior() {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		HomePage homePage = new HomePage(driver);
+		loginPage = homePage.clicarBotaoSignIn();
+	}
+
+	@And("O ator insere o email {string} e clica no botao proximo")
+	public void o_ator_insere_o_email_e_clica_no_botao_proximo(String email) {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		loginPage.inserirEmail(email);
+		loginPage.clicarBotaoProximo();
+	}
+
+	@And("O ator insere a senha {string} e clica no botao proximo")
+	public void o_ator_insere_a_senha_e_clica_no_botao_proximo(String senha) throws Exception {
+		Thread.sleep(2000);
+		loginPage.inserirSenha(senha);
+		loginPage.clicarBotaoProximo();
+		//loginPage.clicarBotaoProximoDOM();
+	}
+
+	@And("O ator confirma que quer continuar conectado")
+	public void o_ator_confirma_que_quer_continuar_conectado() throws Exception {
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+	}
+
+	@Then("A pagina de tarefas e exibida para o ator")
+	public void a_pagina_de_tarefas_e_exibida_para_o_ator() throws Exception {
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(10000);
+		loginPage = homePage.validaUsuarioLogado();
+	}
+
+}

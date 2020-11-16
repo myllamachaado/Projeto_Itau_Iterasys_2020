@@ -1,0 +1,76 @@
+package homepage;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import base.BaseTests;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.TasksPage;
+
+public class HomePageTests extends BaseTests{
+	
+	@Test
+	public void realizarLogin() throws Exception {
+		Thread.sleep(2000);
+		loginPage = homePage.clicarBotaoSignIn();
+		Thread.sleep(2000);
+		loginPage.inserirEmail("myllamachaado@gmail.com");
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(2000);
+		loginPage.inserirSenha("MYLL@cr77");
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(10000);
+	}
+
+	@Test
+	public void validarPaginaInicial() throws Exception {
+		Thread.sleep(2000);
+		homePage.validaHomePage();
+	}
+	
+	@Test
+	public void validarLoginUsuario() throws Exception {
+		realizarLogin();
+		Thread.sleep(2000);
+		loginPage =  homePage.validaUsuarioLogado();
+	}
+	
+	@Test
+	public void cadastrarListaEstatica() throws Exception {
+		Thread.sleep(2000);
+		TasksPage tasksPage = new TasksPage(driver);
+		List<List<String>> livros = tasksPage.retornaItensCSV("resources/csv/livros_estatico.csv");
+		
+		loginPage =  homePage.validaUsuarioLogado();
+		// Cadastra a lista
+		tasksPage.insereNomeLista("Lista");
+		// Cadastra os livros na respectiva lista & já marca livros classificados como "importante"
+		tasksPage.insereLivroCSV("resources/csv/livros_estatico.csv", "Lista");
+		// Valida os cadastros
+		tasksPage.validaInformacoesLista("Lista", livros);
+	}
+	
+	@Test
+	public void cadastrarListaCSV() throws Exception {
+		Thread.sleep(2000);
+		loginPage =  homePage.validaUsuarioLogado();
+		tasksPage.insereNomeLista("Minha Lista");
+	}
+	
+	@Test
+	public void insereLivroLista() throws Exception {
+		realizarLogin();
+		Thread.sleep(2000);
+		loginPage =  homePage.validaUsuarioLogado();
+	}
+	
+	
+	
+}

@@ -1,0 +1,50 @@
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class teste {
+	@Given("^Que o ator ja esta com o navegador aberto na pagina {string}$")
+	public void que_o_ator_ja_esta_com_o_navegador_aberto_na_pagina(String url) throws Exception {
+		System.out.println("Aquii");
+		iniciaPaginaInicial();
+		Thread.sleep(2000);
+		loginPage = homePage.validaHomePage();
+		throw new io.cucumber.java.PendingException();
+	}
+
+	@When("^O ator clica no icone de login no canto superior$")
+	public void o_ator_clica_no_icone_de_login_no_canto_superior() throws Exception {
+		Thread.sleep(2000);
+		loginPage = homePage.clicarBotaoSignIn();
+		throw new io.cucumber.java.PendingException();
+	}
+
+	@And("^O ator insere o email {string} e clica no botao proximo$")
+	public void o_ator_insere_o_email_e_clica_no_botao_proximo(String email) throws Exception {
+		Thread.sleep(2000);
+		loginPage.inserirEmail(email);
+		loginPage.clicarBotaoProximo();
+		throw new io.cucumber.java.PendingException();
+	}
+
+	@And("^O ator insere a senha {string} e clica no botao proximo$")
+	public void o_ator_insere_a_senha_e_clica_no_botao_proximo(String senha) throws Exception {
+		Thread.sleep(2000);
+		loginPage.inserirSenha("MYLL@cr77");
+		loginPage.clicarBotaoProximo();
+		throw new io.cucumber.java.PendingException();
+	}
+
+	@And("^O ator confirma que quer continuar conectado$")
+	public void o_ator_confirma_que_quer_continuar_conectado() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("^A pagina de tarefas e exibida para o ator$")
+	public void a_pagina_de_tarefas_e_exibida_para_o_ator() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

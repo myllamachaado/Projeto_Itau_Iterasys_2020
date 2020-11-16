@@ -1,0 +1,38 @@
+package homepage;
+
+import org.junit.jupiter.api.Test;
+
+import base.BaseTests;
+import pages.LoginPage;
+
+public class HomePageTests extends BaseTests{
+	
+	protected LoginPage loginPage;
+	
+	@Test
+	public void realizarLogin() throws Exception {
+		System.out.println("Aqui 1");
+		Thread.sleep(2000);
+		System.out.println("Aqui 1");
+		loginPage = homePage.clicarBotaoSignIn();
+		System.out.println("Aqui 2");
+		Thread.sleep(2000);
+		loginPage.inserirEmail("myllamachaado@gmail.com");
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(2000);
+		loginPage.inserirSenha("MYLL@cr77");
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(2000);
+		loginPage.clicarBotaoProximo();
+		Thread.sleep(10000);
+		loginPage = homePage.validaUsuarioLogado();
+	}
+	
+	@Test
+	public void validaLoginUsuario() throws Exception {
+		realizarLogin();
+	}
+	
+}

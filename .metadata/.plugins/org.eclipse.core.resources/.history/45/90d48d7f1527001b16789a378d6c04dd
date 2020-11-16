@@ -1,0 +1,21 @@
+@tag
+Feature: Livros
+
+	@tag1
+	Scenario Outline: Inserção de livros pré-definidos
+		Given que estou com o navegador aberto na home page do sistema
+		 When clico no icone de login no canto superior
+		  And insiro o email "myllamachaado@gmail.com" e clico no botao proximo
+		  And insiro a senha "MYLL@cr77" e clico no botao proximo
+		  And confirmo que quero continuar conectado
+		 Then a pagina de tarefas e exibida
+		  And seleciono a lista "<nome_lista>"
+		  And insiro o nome "<nome_livro>" e "<importante>" no campo tarefa
+		  And clico no botao ADICIONAR
+		 Then o livro "<nome_livro>" aparece na lista "<nome_lista>"
+
+		Examples: 
+			| nome_lista | nome_livro       | importante |
+			| Lista      | A Arte da Guerra | f          |
+			| Lista      | A Cauda Longa    | f          |
+			| Lista      | A Torre Negra    | t          |

@@ -1,0 +1,19 @@
+@tag
+Feature: Lista
+
+	@tag1
+	Scenario Outline: Cenario de login com sucesso 
+		Given Que o ator ja esta com o navegador aberto na pagina inicial
+		 When O ator clica no icone de login no canto superior
+		  And O ator insere o email "myllamachaado@gmail.com" e clica no botao proximo
+		  And O ator insere a senha "MYLL@cr77" e clica no botao proximo
+		  And O ator confirma que quer continuar conectado
+		  And A pagina de tarefas e exibida para o ator
+		 And O ator insere o nome <nome_lista> como nome da lista
+		 And O ator aperta o botao ENTER
+		Then A nova lista e criada na barra lateral
+
+		Examples: 
+      | nome_lista  |
+      | Lista |
+      | Meus Livros |

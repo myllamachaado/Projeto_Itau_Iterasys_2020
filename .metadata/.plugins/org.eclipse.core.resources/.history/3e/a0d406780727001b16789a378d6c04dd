@@ -1,0 +1,20 @@
+@tag
+Feature: Lista
+
+	@tag1
+	Scenario Outline: Cenario de login com sucesso
+		Given que estou com o navegador aberto na home page do sistema
+		 When clico no icone de login no canto superior
+		  And insiro o email "myllamachaado@gmail.com" e clico no botao proximo
+		  And insiro a senha "MYLL@cr77" e clico no botao proximo
+		  And confirmo que quero continuar conectado
+		 Then a pagina de tarefas e exibida
+		  And insiro o nome <nome_lista> como nome da lista e aperto o botao ENTER
+		  And insiro o livro <nome_livro> com sua <classificacao>
+		 Then a nova lista e criada na barra lateral com seus respectivos livros
+
+		Examples: 
+			| nome_lista | nome_livro         | classificacao |
+			| "Lista"    | "A Arte da Guerra" | "f"           |
+			| "Lista"    | "A Cauda Longa"    | "f"       		|
+			| "Lista"    | "A Torre Negra"    | "t"       		|

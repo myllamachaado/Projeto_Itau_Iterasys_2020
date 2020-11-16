@@ -1,0 +1,40 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+@tag
+Feature: HomePage
+
+	@tag1
+	Scenario: Cenario de login com sucesso
+		Given Que o ator ja esta com o navegador aberto na pagina "https://to-do.live.com/"
+		 When O ator clica no icone de login no canto superior
+		  And O ator insere o email "myllamachaado@gmail.com" e clica no botao proximo
+		  And O ator insere a senha "MYLL@cr77" e clica no botao proximo
+		  And O ator confirma que quer continuar conectado
+		 Then A pagina de tarefas e exibida para o ator
+
+#	@tag2
+#	Scenario Outline: Title of your scenario outline
+#		Given I want to write a step with <name>
+#		 When I check for the <value> in step
+#		 Then I verify the <status> in step
+#
+#		Examples: 
+#			| name  | value | status  |
+#			| name1 |     5 | success |
+#			| name2 |     7 | Fail    |

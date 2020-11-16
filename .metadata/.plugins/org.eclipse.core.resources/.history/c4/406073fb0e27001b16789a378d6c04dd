@@ -1,0 +1,92 @@
+package pages;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class TasksPage {
+	// Driver
+	private WebDriver driver;
+	List<WebElement> listasCriadas = new ArrayList();
+	List<WebElement> listasLivros = new ArrayList();
+	
+	private By inputNovaLista = By.cssSelector("input[id*=\"baseAddInput-addList\"]");
+	private By buttonAdicionarTarefa = By.cssSelector("button[class*=\"baseAdd-icon\"]");
+	private By inputNovaTarefa = By.cssSelector("input[id*=\"baseAddInput-addTask\"]");
+	private By botaoAdicionarTarefa = By.cssSelector("class[id*=\"baseAdd-button\"]");
+	private By h2NomeLista = By.cssSelector("h2[class*=\"listTitle\"]");
+	private By buttonImportante = By.cssSelector("i[class*=\"icon fontIcon ms-Icon ms-Icon--FavoriteStar iconSize-20\"]");
+	
+	
+	private By listaDeListas = By.cssSelector("div[class*=\"sortable-lists\"]");
+	private By listaDeLivros = By.cssSelector("button[class*=\"taskItem-titleWrapper\"]");
+		
+	public TasksPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void insereNomeLista(String nome_lista) throws Exception {
+		Thread.sleep(5000);
+		// Cria a lisra se ela não foi criada
+		if(!validaListaCriada(nome_lista)) {
+			driver.findElement(inputNovaLista).sendKeys(nome_lista + Keys.ENTER);
+			validaListaCriada(nome_lista);
+		} 
+		Thread.sleep(5000);
+	}
+	
+	public void selecionaLista(String nome_lista) {
+		
+	}
+	
+	public void insereLivroLista(String nome_livro, String classificacao) throws Exception {
+		Thread.sleep(5000);
+		driver.findElement(inputNovaTarefa).sendKeys(nome_livro + Keys.ENTER);
+		if(classificacao.equals("t")){
+			marcaClassificacaoLivro(nome_livro);
+		}
+	}
+	
+	public boolean validaListaCriada(String nome_lista) throws Exception {
+		listasCriadas = driver.findElements(listaDeListas);
+//		System.out.println("Nome da lista: " + nome_lista.trim());
+		for (WebElement element : listasCriadas) {
+			System.out.println("Tela: " + element.getText().trim() + " | Nome da lista: " + nome_lista.trim());
+			if(element.getText().trim().contains(nome_lista.trim())){
+				System.out.println("*** Lista criada com sucesso!");
+				element.click();
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void validaItemLista(String nome_lista) {
+		
+		
+	}
+	
+	public void marcaClassificacaoLivro(String nome_livro) throws Exception {
+		listasLivros = driver.findElements(listaDeLivros);
+		System.out.println("Tamanho lista: " + listasLivros.size());
+		for (WebElement element : listasLivros) {
+			System.out.println("Item: " + element.getText().trim() + " | Nome da lista: " + nome_livro.trim());	
+			if(element.getText().trim().equals(nome_livro.trim())){
+				driver.findElement(buttonImportante).click();
+				System.out.println("*** Livro classificado como importante!");
+			}
+			else {
+				System.out.println("*** Livro não classificado como importante!");
+			}
+		}
+		
+		Thread.sleep(15000);
+	
+	}
+
+}
+

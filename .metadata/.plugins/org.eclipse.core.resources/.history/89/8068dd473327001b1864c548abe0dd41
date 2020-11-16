@@ -1,0 +1,40 @@
+@tag
+Feature: Lista
+
+	#	@tag1
+	#	Scenario Outline: Criação de uma lista de dados estáticos
+	#		Given que estou com o navegador aberto na home page do sistema
+	#		 When clico no icone de login no canto superior
+	#		  And insiro o email "myllamachaado@gmail.com" e clico no botao proximo
+	#		  And insiro a senha "MYLL@cr77" e clico no botao proximo
+	#		  And confirmo que quero continuar conectado
+	#		 Then a pagina de tarefas e exibida
+	#		  And insiro o nome "Lista" como nome da lista e aperto o botao ENTER
+	#		  And insiro os livros "A Arte da Guerra", "A Cauda Longa", "A Torre Negra"
+	#		  And e defino o livro "A Torre Negra" como importante
+	#		 Then a nova lista "Minha Lista" consta na barra lateral com seus respectivos livros
+	@tag2
+	Scenario Outline: Criação de uma lista de dados a partir de CSV
+#		Given que estou com o navegador aberto na home page do sistema
+#		 When clico no icone de login no canto superior
+#		  And insiro o email "myllamachaado@gmail.com" e clico no botao proximo
+#		  And insiro a senha "MYLL@cr77" e clico no botao proximo
+#		  And confirmo que quero continuar conectado
+#		 Then a pagina de tarefas e exibida
+#		  And insiro o nome "Minha Lista" como nome da lista e aperto o botao ENTER
+#		  And insiro os livros presentes no arquivo "resources/csv/livros.csv" na lista "Minha Lista"
+		 Then a nova lista "Minha Lista" consta na barra lateral com seus respectivos livros <livros>
+
+		Examples: 
+			| livros                          |
+			| Harry Potter                    |
+#			| Guerra e Paz                    |
+#			| "1984"                          |
+#			| Os Lusiadas                     |
+#			| Admiravel Mundo Novo            |
+#			| O Grande Gatsby                 |
+#			| Moby Dick                       |
+#			| Moby Dick                       |
+#			| Hamlet                          |
+#			| O Apanhador no Campo de Centeio |
+#			| Robinson Crusoe                 |
