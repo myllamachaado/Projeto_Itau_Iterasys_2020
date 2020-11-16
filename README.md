@@ -18,7 +18,7 @@ Utilizando o site Microsoft To Do (https://todo.microsoft.com). Você deve criar
 ▪ JDK 14
 ▪ Selenium versão 2020-09 (4.17.0)
 ▪ Cucumber versão 6.1.2
-▪JUnit versão 5.6.2
+▪JUnit versão 5.6.2 
 
 
 
