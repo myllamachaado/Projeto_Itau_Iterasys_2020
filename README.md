@@ -1,9 +1,7 @@
 # Projeto_Itau_Iterasys_2020
-Aluna: Ludmila Machado
+**Aluna:** Ludmila Machado
 
-Exercício 2 de Teste Web desenvolvio em Selenium, Cucumber, JUnit e Java
-
-Descrição do problema:
+**Descrição do problema**
 Utilizando o site Microsoft To Do (https://todo.microsoft.com). Você deve criar os testes com o seu usuário logado no site, por padronização. Não é necessário criar um script de login.
 
 1) Crie a lista Livros
@@ -15,7 +13,7 @@ Utilizando o site Microsoft To Do (https://todo.microsoft.com). Você deve criar
 7) Na lista Meus Livros, marque 3 itens (livros) como importantes e outros 2 como concluídos
 8) Valide se a lista Meus Livros existe, seu nome, itens e se os 3 itens (livros) estão como importantes e os outros 2 estão como concluídos
 
-Testes automatizados desenvolvido utilizando:
+**Testes automatizados desenvolvido utilizando**
 ▪ Eclipse versão 2020-09 (4.17.0) 
 ▪ JDK 14
 ▪ Selenium versão 2020-09 (4.17.0)
