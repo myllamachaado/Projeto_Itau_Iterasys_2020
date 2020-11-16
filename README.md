@@ -13,7 +13,7 @@ Utilizando o site Microsoft To Do (https://todo.microsoft.com). Você deve criar
 7) Na lista Meus Livros, marque 3 itens (livros) como importantes e outros 2 como concluídos
 8) Valide se a lista Meus Livros existe, seu nome, itens e se os 3 itens (livros) estão como importantes e os outros 2 estão como concluídos
 
-**Testes automatizados desenvolvido utilizando**
+**Testes automatizados desenvolvido utilizando** <br />
 ▪ Eclipse versão 2020-09 (4.17.0) <br />
 ▪ JDK 14 <br />
 ▪ Selenium versão 2020-09 (4.17.0) <br />
