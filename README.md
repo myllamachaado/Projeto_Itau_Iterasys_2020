@@ -1,4 +1,4 @@
-# Projeto_Itau_Iterasys_2020
+# Projeto Itau Iterasys 2020 - Processo Seletivo
 **Aluna:** Ludmila Machado
 
 **Descrição do problema**
